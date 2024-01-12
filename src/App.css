@@ -37,7 +37,3 @@ body {
   height: 50vh;
   width: 50vw;
 }
-
-.leaflet-default-icon-path {
-  background-image: url(./images/marker-icon.png);
-}
