@@ -47,6 +47,9 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin: 2rem;
+  .map {
+    flex: 1 0 40%;
+  }
   .info {
     text-align: center;
     flex: 1 0 300px;
@@ -61,4 +64,5 @@ body {
   border-radius: 10px;
   height: 400px;
   width: 400px;
+  margin: 0 auto;
 }
