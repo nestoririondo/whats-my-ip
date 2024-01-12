@@ -7,6 +7,27 @@ body {
   font-family: sans-serif;
   background-color: #282c34;
 }
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+  color: #fff;
+  animation: blink 200ms infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .background {
   background-repeat: no-repeat;
   background-size: cover;

@@ -20,6 +20,7 @@ L.Icon.Default.mergeOptions({
 function App() {
   const [myLocation, setMyLocation] = useState("");
   const [locationData, setLocationData] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const ipifyApiKey = import.meta.env.VITE_REACT_APP_IPIFY_API_KEY;
   const countrylayerApiKey = import.meta.env
@@ -46,12 +47,14 @@ function App() {
   };
 
   useEffect(() => {
-    getMyLocation();
-    getLocationData();
+    Promise.all([getMyLocation(), getLocationData()])
+      .then(() => setIsLoading(false))
+      .catch(() => console.log("Error"));
   }, []);
 
-  if (!myLocation) return null;
-  if (!locationData) return null;
+  if (isLoading) {
+    return <div className="loading">Loading...</div>;
+  }
 
   const {
     ip,
