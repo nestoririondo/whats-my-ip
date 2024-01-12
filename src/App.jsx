@@ -20,7 +20,6 @@ function App() {
         `https://geo.ipify.org/api/v2/country,city?apiKey=${ipifyApiKey}`
       );
       setMyLocation(response.data);
-      console.log(response.data);
     } catch {
       console.log("Error");
     }
@@ -30,7 +29,6 @@ function App() {
     try {
       const response = await axios.get(`https://restcountries.com/v3.1/all`);
       setLocationData(response.data);
-      console.log(response.data);
     } catch {
       console.log("Error");
     }
@@ -52,15 +50,11 @@ function App() {
   const countryData = locationData.filter((thisCountry) => {
     return thisCountry.cca2 === country;
   });
-  console.log(countryData);
 
   const { capital, name, flag, coatOfArms, timezones } = countryData[0];
 
   const today = DateTime.now().setZone(timezones[0]).toFormat("MM-dd-yyyy");
   const now = DateTime.now().setZone(timezones[0]).toFormat("HH:mm");
-
-  console.log(today);
-  console.log(now);
 
   return (
     <div

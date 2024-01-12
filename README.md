@@ -1,9 +1,17 @@
-# React + Vite
+# IP Location Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React application that uses the IPify and RestCountries APIs to fetch and display information about the user's current location.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# whats-my-ip
+- Fetches the user's IP address and location data (country, region, latitude, longitude) using the IPify API.
+- Fetches additional information about the user's country (capital, flag, coat of arms, timezones) using the RestCountries API.
+- Displays a map centered on the user's location using Leaflet.
+- Displays the current date and time in the user's timezone using Luxon.
+
+## Installation
+
+1. Clone this repository: `git clone https://github.com/nestoririondo/whats-my-ip.git`
+2. Install the dependencies: `npm install`
+3. Create a `.env` file in the root of your project and add your IPify and RestCountries API keys.
+4. Start the application: `npm run dev`
